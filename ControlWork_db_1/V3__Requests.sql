@@ -9,7 +9,9 @@ WHERE status = 'открытый';
 /* Task 4 */
 SELECT city_branch AS city, sum(debt_take) AS amount_of_debt FROM credit_history
 JOIN branches ON credit_history.id_branch = branches.id
-GROUP BY city_branch;
+GROUP BY city_branch
+ORDER BY amount_of_debt DESC
+LIMIT 1;
 
 
 
